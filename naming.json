@@ -1,0 +1,12 @@
+{
+    "name": "Blax",
+    "symbol": "Blax",
+    "description": "Only Possible On Solana",
+    "image": "https://amaranth-central-anglerfish-299.mypinata.cloud/ipfs/QmeW82iZyYNetz89DYhGTBEsT4U7zvYzYDXWKVUesgVX67",
+    "attributes": [
+      {
+        "trait_type": "Item",
+        "value": "Developer Portal"
+      }
+    ]
+  }

@@ -1,13 +1,8 @@
-import {
-  Connection,
-  Keypair,
-  PublicKey,
-  Transaction,
-  clusterApiUrl,
-  sendAndConfirmTransaction,
-} from '@solana/web3.js'
+import {Connection, Keypair, PublicKey, Transaction, clusterApiUrl, sendAndConfirmTransaction,} from '@solana/web3.js'
 import { createCreateMetadataAccountV3Instruction } from '@metaplex-foundation/mpl-token-metadata'
-import { OWNER, getTokenMintFromFile } from './reused'
+import { OWNER, checkOwner, getTokenAddress } from './reuse'
+
+checkOwner()
 
 const connection = new Connection(clusterApiUrl('devnet'))
 
@@ -15,10 +10,10 @@ const setupTokenMetadata = async (tokenMint: PublicKey, OWNER: Keypair) => {
   const TOKEN_METADATA_PROGRAM_ID = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
 
   const metadataData = {
-    name: 'Dapp Mentors YouTube',
-    symbol: 'DMY',
+    name: 'Blax Coin',
+    symbol: 'Blax',
     // Arweave / IPFS / Pinata etc link using metaplex standard for off-chain data
-    uri: 'https://dappmentors.org',
+    uri: 'https://amaranth-central-anglerfish-299.mypinata.cloud/ipfs/QmQVq2tmSv673nzacFzzi9JgB76ig5d3v3cCyVvkJiVBnt',
     sellerFeeBasisPoints: 0,
     creators: null,
     collection: null,
@@ -29,8 +24,6 @@ const setupTokenMetadata = async (tokenMint: PublicKey, OWNER: Keypair) => {
     [Buffer.from('metadata'), TOKEN_METADATA_PROGRAM_ID.toBuffer(), tokenMint.toBuffer()],
     TOKEN_METADATA_PROGRAM_ID
   )
-
-  console.log(`✅ Finished! Created token metadata: ${metadataPDAAndBump[0].toString()}`)
 
   const metadataPDA = metadataPDAAndBump[0]
   const transaction = new Transaction()
@@ -54,12 +47,12 @@ const setupTokenMetadata = async (tokenMint: PublicKey, OWNER: Keypair) => {
 
   transaction.add(createMetadataAccountInstruction)
 
-  const transactionSignature = await sendAndConfirmTransaction(connection, transaction, [OWNER])
-  console.log(`✅ Finished! Created token metadata: ${transactionSignature}`)
+  const signature = await sendAndConfirmTransaction(connection, transaction, [OWNER])
+  console.log(`✅ Finished! Created token metadata: ${signature}`)
 }
 
 const main = async () => {
-  const tokenMint = getTokenMintFromFile()
+  const tokenMint = getTokenAddress()
   await setupTokenMetadata(tokenMint, OWNER)
   console.log(`✅ Metadata setup complete!`)
 }
