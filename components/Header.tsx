@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <header className="p-4 bg-gray-800 mb-4">
       <nav className="flex justify-between items-center max-w-6xl mx-auto">
-        <p className="text-white">Reap6r Coin</p>
+        <p className="text-white">Snow Token</p>
         
-        {isMounted && <WalletMultiButton style={{ backgroundColor: '#F97316', color: 'white' }} />}
+        {isMounted && <WalletMultiButton style={{ backgroundColor: '#708090', color: 'white' }} />}
       </nav>
     </header>
   )

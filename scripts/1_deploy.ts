@@ -7,8 +7,13 @@ checkOwner()
 
 const connection = new Connection(clusterApiUrl('devnet'))
 
+const secretT = JSON.parse(fs.readFileSync("snw1Ew4HgzG5mk1joThp8kzg6tGDD8aR9q94dDk5JDu.json").toString()) as number[]
+const secretKeyT = Uint8Array.from(secretT)
+const tokenKeypair = Keypair.fromSecretKey(secretKeyT)
+
+
 const createToken = async (OWNER: Keypair): Promise<void> => {
-    const tokenMint = await createMint(connection, OWNER, OWNER.publicKey, null, 2)
+    const tokenMint = await createMint(connection, OWNER, OWNER.publicKey, null, 2, tokenKeypair)
     console.log(`✅ Finished! Created token mint: ${tokenMint.toString()}`)
   
     // Write token mint to a file

@@ -9,8 +9,8 @@ const formatReceiver = (receiver: string) => {
 const MintHistory = ({ mintHistory }: { mintHistory: SalesHistoryItem[] }) => {
   return (
     <div>
-      <h1 className="text-lg font-bold text-gray-700">Recently Purchased</h1>
-      <ul className="mt-2 text-gray-500">
+      <h1 className="text-lg font-bold text-black-900">Recently Purchased</h1>
+      <ul className="mt-2 text-black-700">
         {mintHistory.map((minter, i) => (
           <li key={i} className="mb-2 flex justify-between items-center">
             <div className="text-sm">
@@ -22,7 +22,7 @@ const MintHistory = ({ mintHistory }: { mintHistory: SalesHistoryItem[] }) => {
               >
                 {formatReceiver(minter.receiver.toString())}
               </Link>{' '}
-              - <span>{minter.amount} Reap6r Token</span>
+              - <span>{minter.amount} Snow Token</span>
             </div>
 
             <Link

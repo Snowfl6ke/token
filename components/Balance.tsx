@@ -11,7 +11,7 @@ const Balance = ({ balance }: { balance: number }) => {
       </div>
       <div>
         <h1 className="text-lg font-semibold text-gray-700">Current Balance</h1>
-        <p className="text-gray-600 text-md">{balance} Reap6r</p>
+        <p className="text-gray-600 text-md">{balance} Snow</p>
       </div>
     </div>
   )

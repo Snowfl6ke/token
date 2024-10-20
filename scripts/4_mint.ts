@@ -20,7 +20,7 @@ const mintTokens = async (tokenMint: PublicKey, OWNER: Keypair): Promise<void> =
     tokenMint,
     ownerTokenAccount.address,
     OWNER.publicKey,
-    10000 * Math.pow(10, 2) // 1000 tokens with 2 decimal places
+    1000000 * Math.pow(10, 2) // 1000 tokens with 2 decimal places
   )
 
   console.log(`✅ Finished! Token mint complete: ${signature}`)

@@ -10,10 +10,10 @@ const setupTokenMetadata = async (tokenMint: PublicKey, OWNER: Keypair) => {
   const TOKEN_METADATA_PROGRAM_ID = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
 
   const metadataData = {
-    name: 'Blax Coin',
-    symbol: 'Blax',
+    name: 'Snow V4',
+    symbol: 'SNW V4',
     // Arweave / IPFS / Pinata etc link using metaplex standard for off-chain data
-    uri: 'https://amaranth-central-anglerfish-299.mypinata.cloud/ipfs/QmQVq2tmSv673nzacFzzi9JgB76ig5d3v3cCyVvkJiVBnt',
+    uri: 'https://amaranth-central-anglerfish-299.mypinata.cloud/ipfs/Qmf9BSBBvsVhjyiW8Awrci1TFgnBZr7Zn1ksC9TXTt7vKC',
     sellerFeeBasisPoints: 0,
     creators: null,
     collection: null,

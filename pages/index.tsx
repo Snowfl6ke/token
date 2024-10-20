@@ -13,6 +13,7 @@ import Skeleton from 'react-loading-skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import { globalActions } from '@/store/globalSlice'
 
+
 export default function Home() {
   const { connection } = useConnection()
   const { publicKey } = useWallet()
@@ -47,11 +48,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Grim Reap6r</title>
+        <title>Snow Token</title>
+        <script src="../vendor/snow.js" defer></script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen bg-gray-100">
+      <div className="h-screen bg-gray-300 bg-snowflake bg-cover bg-center">
         <Header />
 
         <div className="h-[100px]" />

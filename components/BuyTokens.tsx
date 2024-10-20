@@ -73,7 +73,7 @@ const BuyTokens = () => {
         type="number"
         value={amount}
         min="1"
-        placeholder={`E.g. 1 Reap6r token, (${salesCost} SOL per token)`}
+        placeholder={`E.g. 1 Snow token, (${salesCost} SOL per token)`}
         required
         onChange={(e) => setAmount(e.target.value)}
         className="mt-1 block w-full py-2 px-3 border border-gray-300
@@ -89,9 +89,9 @@ const BuyTokens = () => {
           publicKey.toString() === OWNER.publicKey.toString()
         }
         className="w-full flex justify-center py-2 px-4 border
-        border-transparent rounded-md shadow-sm text-sm font-medium
-        text-white bg-orange-500 hover:bg-orange-700 focus:outline-none
-        focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-orange-300"
+border-transparent rounded-md shadow-sm text-sm font-medium
+text-black bg-gray-800 hover:bg-gray-500 focus:outline-none
+focus:ring-2 focus:ring-offset-2 focus:ring-white-900 disabled:bg-gray-500"
       >
         Buy Tokens
       </button>
